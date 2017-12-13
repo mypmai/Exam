@@ -1,0 +1,18 @@
+<h1>New Auction</h1>
+
+@model Exam.Models.ProductViewModel
+<form asp-action="CreateProduct" method="post">
+    <label asp-for="Name"></label>
+    <input asp-for="Name"/>
+    <span asp-validation-for="Name"></span><br>
+    <label asp-for="Description"></label>
+    <input asp-for="Description"/>
+    <span asp-validation-for="Description"></span><br>
+    <label asp-for="Start_Bid"></label>
+    <input asp-for="Start_Bid"/>
+    <span asp-validation-for="Start_Bid"></span><br>
+    <label asp-for="End_Date"></label>
+    <input asp-for="End_Date"/>
+    <span asp-validation-for="End_Date"></span><br>  
+    <button type="submit">Create Auction</button>
+</form><br>

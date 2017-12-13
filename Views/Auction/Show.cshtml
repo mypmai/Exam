@@ -1,0 +1,22 @@
+<h1>Show</h1>
+
+@model Exam.Models.Product
+<p>Created by: @ViewBag.ProductUserFirst @ViewBag.ProductUserLast</p>
+<P>Product Name: @Model.Name </P>
+<p>Description: @Model.Description</p>
+<p>End: @Model.End_Date.ToString("MM/dd/yyyy")</p>
+@{
+    int diff2 = (int)((@Model.End_Date - DateTime.Now).TotalDays);
+
+    <p>Remaining day: @diff2</p>
+}
+
+
+<h3>Current Highest Bid: $ @Model.Start_Bid</h3> 
+
+<form action="/bidding" method="post">
+<input type="number" min="1" step="any" name="Start_Bid">
+<input type="hidden" value="@Model.ProductId" name="id">
+<input type="submit" value="Bid!!">
+</form>
+<p>@ViewBag.Message</p>
